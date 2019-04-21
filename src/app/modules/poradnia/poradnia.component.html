@@ -1,0 +1,108 @@
+<main>
+  <section class="section-profile-cover my-0"></section>
+
+  <section class="section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-1 mb-3 mr-3">
+          <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-success">
+            <i class="far fa-smile-beam"></i>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <h2 class="display-3">Moja metoda</h2>
+          <p class="text-justify">
+            Przede wszystkim najważniejszym jest, aby dopasować dietę do preferencji smakowych. Aby każdy mógł jeść, co
+            tylko lubi i w czym odnajduję przyjemność.
+          </p>
+          <p class="text-justify">
+            Każda osoba zostanie potraktowana bardzo indywidualnie, co tylko przybliży nas do sukcesu. Zachęcam do
+            podejmowania aktywności fizycznej. Oczywiście nie musi być to od razu forma kulturystycznego treningu na
+            siłowni, ale spacer, bieganie czy jazda na rowerze będzie również świetną formą rozwoju fizycznego, która
+            świetnie poprawi Ci humor i zdrowie.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-secondary">
+    <div class="container">
+      <div class="row justify-content-center mb-3">
+        <div class="col-lg-1 mb-3 mr-3">
+          <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-warning">
+            <i class="far fa-thumbs-up"></i>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <h2 class="display-3">Obejrzyj moją historię</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="embed-responsive embed-responsive-16by9 mt-3">
+            <iframe
+              class="embed-responsive-item"
+              src="https://www.youtube.com/embed/qVwgjCKkWgE?rel=0"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <div class="card bg-gradient-warning shadow-lg border-0 mt-5 p-5">
+            <div class="row justify-content-center align-items-center">
+              <div class="col-lg-6">
+                <p class="lead text-justify text-white mt-3">
+                  Do osiągnięcia sukcesu będzie potrzebna odpowiednia dawka motywacji i determinacji. O te dwa aspekty
+                  zadbamy bardzo sumiennie jak o dietę.
+                </p>
+                <p class="lead text-justify text-white mt-3">
+                  Jeśli potrzebujesz pomocy i mojego wsparcia zapraszam serdecznie Strefa Fit.
+                </p>
+              </div>
+              <div class="col-lg-4">
+                <img src="./assets/img/poradnia-1.jpg" class="img-fluid floating-lg" />
+              </div>
+            </div>
+          </div>
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="spotkania">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-1 mb-3 mr-3">
+          <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-info">
+            <i class="fas fa-route"></i>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <h2 class="display-3">Spotkania</h2>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div *ngFor="let item of spotkania" class="col-md-6 col-lg-4 my-2">
+          <div class="px-4">
+            <img
+              (click)="open(item)"
+              src="assets/img/spotkania/{{ item.image }}.jpg"
+              class="rounded-circle img-center img-fluid shadow shadow-lg--hover"
+              style="width: 200px;"
+            />
+            <div class="pt-4 text-center">
+              <h5 class="title">
+                <span class="d-block mb-1">{{ item.cardTitle }}</span>
+                <small class="h6 text-muted">{{ item.cardSubtitle }}</small>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+

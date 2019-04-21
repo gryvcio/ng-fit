@@ -1,0 +1,21 @@
+.navbar {
+  padding: 8px;
+
+  & .navbar-brand img {
+    height: 45px;
+  }
+
+  & .navbar-nav .nav-link {
+    padding: 8px;
+  }
+}
+
+.nav-black {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  transition: background-color 300ms linear;
+}
+
+.bg-success {
+  background-color: rgba(45, 206, 137, 0.8) !important;
+  transition: background-color 300ms linear;
+}

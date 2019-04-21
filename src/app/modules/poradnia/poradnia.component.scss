@@ -1,0 +1,10 @@
+.section-profile-cover {
+  background: url('/assets/img/poradnia.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 60vh;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+}
+
+#spotkania img {
+  cursor: pointer;
+}

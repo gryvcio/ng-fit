@@ -1,0 +1,71 @@
+<nav class="navbar fixed-top navbar-horizontal navbar-expand-lg navbar-dark nav-black">
+  <!-- <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned"> -->
+  <div class="container">
+    <a class="navbar-brand mr-lg-5" [routerLink]="['/']">
+      <img src="./assets/img/brand.png" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      (click)="isCollapsed = !isCollapsed"
+      [attr.aria-expanded]="!isCollapsed"
+      aria-controls="navbar_global"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="navbar_global" [ngbCollapse]="isCollapsed">
+      <div class="navbar-collapse-header">
+        <div class="row">
+          <div class="col-6 collapse-brand">
+            <a [routerLink]="['/']">
+              <img src="./assets/img/brand.png" />
+            </a>
+          </div>
+          <div class="col-6 collapse-close">
+            <button
+              type="button"
+              class="navbar-toggler"
+              (click)="isCollapsed = !isCollapsed"
+              [attr.aria-expanded]="!isCollapsed"
+              aria-controls="navbar_global"
+            >
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+        <li *ngFor="let page of pages" class="nav-item">
+          <a
+            class="nav-link no-caret"
+            [routerLink]="[page.url]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+          <div class="d-flex align-items-center">
+            <i class="fas fa-angle-right d-lg-none"></i>
+            <span class="nav-link-inner--text">{{ page.title }}</span>
+          </div>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link nav-link-icon"
+            href="https://www.facebook.com/strefafit24"
+            target="_blank"
+            data-toggle="tooltip"
+            title="Polub mnie na Facebook'u"
+          >
+          <div class="d-flex align-items-center">
+            <i class="fab fa-facebook-square"></i>
+            <span class="nav-link-inner--text d-lg-none">Facebook</span>
+          </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

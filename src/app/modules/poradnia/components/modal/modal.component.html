@@ -1,0 +1,13 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{ item.title }}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p>{{ item.description }}</p>
+  <img *ngFor="let num of numbers; let i = index" src="assets/img/spotkania/{{ item.image }}-{{ i + 1 }}.jpg" class="img-fluid m-2">
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-light" (click)="activeModal.close('Close click')">Zamknij</button>
+</div>
