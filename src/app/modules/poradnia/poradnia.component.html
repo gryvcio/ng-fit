@@ -1,106 +1,142 @@
-<main>
-  <section class="section-profile-cover my-0"></section>
+<app-header-img-bg
+  [imageBg]="imageBg"
+  [title]="'Poradnia'"
+  [subtitle]="'&mdash; Poznaj mnie i moją poradnie!'"
+></app-header-img-bg>
 
-  <section class="section">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-1 mb-3 mr-3">
-          <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-success">
-            <i class="far fa-smile-beam"></i>
-          </div>
-        </div>
-        <div class="col-lg-7">
-          <h2 class="display-3">Moja metoda</h2>
-          <p class="text-justify">
-            Przede wszystkim najważniejszym jest, aby dopasować dietę do preferencji smakowych. Aby każdy mógł jeść, co
-            tylko lubi i w czym odnajduję przyjemność.
-          </p>
-          <p class="text-justify">
-            Każda osoba zostanie potraktowana bardzo indywidualnie, co tylko przybliży nas do sukcesu. Zachęcam do
-            podejmowania aktywności fizycznej. Oczywiście nie musi być to od razu forma kulturystycznego treningu na
-            siłowni, ale spacer, bieganie czy jazda na rowerze będzie również świetną formą rozwoju fizycznego, która
-            świetnie poprawi Ci humor i zdrowie.
-          </p>
+<section class="section">
+  <div class="container">
+    <app-header-section [title]="'Moja metoda'" [icon]="'far fa-smile-beam'" [color]="'success'"></app-header-section>
+
+    <div class="row justify-content-center media-mt">
+      <div class="col-lg-8 align-self-end">
+        <p class="text-justify wow fadeIn">
+          Przede wszystkim najważniejszym jest, aby dopasować dietę do preferencji smakowych. Aby każdy mógł jeść, co
+          tylko lubi i w czym odnajduję przyjemność.
+        </p>
+        <p class="text-justify wow fadeIn">
+          Każda osoba zostanie potraktowana bardzo indywidualnie, co tylko przybliży nas do sukcesu. Zachęcam do
+          podejmowania aktywności fizycznej. Oczywiście nie musi być to od razu forma kulturystycznego treningu na
+          siłowni, ale spacer, bieganie czy jazda na rowerze będzie również świetną formą rozwoju fizycznego, która
+          świetnie poprawi Ci humor i zdrowie.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-secondary">
+  <div class="container">
+    <app-header-section
+      class="mb-2"
+      [title]="'Obejrzyj moją historię'"
+      [icon]="'far fa-thumbs-up'"
+      [color]="'danger'"
+    ></app-header-section>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="embed-responsive embed-responsive-16by9 wow fadeIn mt-3">
+          <iframe
+            class="embed-responsive-item"
+            src="https://www.youtube.com/embed/qVwgjCKkWgE?rel=0"
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
     </div>
-  </section>
 
-  <section class="section bg-secondary">
-    <div class="container">
-      <div class="row justify-content-center mb-3">
-        <div class="col-lg-1 mb-3 mr-3">
-          <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-warning">
-            <i class="far fa-thumbs-up"></i>
-          </div>
-        </div>
-        <div class="col-lg-7">
-          <h2 class="display-3">Obejrzyj moją historię</h2>
+    <div class="row justify-content-center mt-5">
+      <div class="col-lg-8 justify-content-center">
+        <img
+          src="assets/img/dyplom.jpg"
+          class="rounded img-center img-fluid shadow shadow-lg--hover wow fadeIn"
+          alt="No image"
+        />
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="card bg-gradient-warning shadow-lg text-center text-white border-0 mt-5 m-1 p-5">
+          <p class="lead mt-3 wow fadeIn">
+            Do osiągnięcia sukcesu będzie potrzebna odpowiednia dawka motywacji i determinacji. O te dwa aspekty zadbamy
+            bardzo sumiennie jak o dietę.
+          </p>
+          <p class="lead mt-3 wow fadeIn">
+            Jeśli potrzebujesz pomocy i mojego wsparcia zapraszam serdecznie.
+          </p>
+          <p class="display-4 font-weight-bold wow fadeIn">Strefa Fit</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="embed-responsive embed-responsive-16by9 mt-3">
-            <iframe
-              class="embed-responsive-item"
-              src="https://www.youtube.com/embed/qVwgjCKkWgE?rel=0"
-              allowfullscreen
-            ></iframe>
+<section class="section" id="pointer">
+  <div class="container">
+    <app-header-section
+      class="mb-2"
+      [title]="'Spotkania'"
+      [icon]="'fas fa-route'"
+      [color]="'info'"
+    ></app-header-section>
+
+    <div class="row mt-5">
+      <div *ngFor="let item of spotkania" class="col-md-6 col-lg-4 my-3 wow fadeIn">
+        <div class="px-4">
+          <img
+            class="rounded-circle img-center img-fluid shadow shadow-lg--hover"
+            src="assets/img/spotkania/{{ item.image }}.jpg"
+            alt="No image"
+            style="width: 200px;"
+            (click)="openModal(item)"
+          />
+          <div class="pt-4 text-center">
+            <h5 class="title">
+              <span class="d-block mb-1" [innerHTML]="item.cardTitle"></span>
+              <small class="h6 text-muted" [innerHTML]="item.cardSubtitle"></small>
+            </h5>
           </div>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-11">
-          <div class="card bg-gradient-warning shadow-lg border-0 mt-5 p-5">
-            <p class="lead text-center text-white mt-3">
-              Do osiągnięcia sukcesu będzie potrzebna odpowiednia dawka motywacji i determinacji. O te dwa aspekty
-              zadbamy bardzo sumiennie jak o dietę.
-            </p>
-            <p class="lead text-center text-white mt-3">
-              Jeśli potrzebujesz pomocy i mojego wsparcia zapraszam serdecznie
-              <span class="font-weight-bold">Strefa Fit</span>.
-            </p>
+          <div class="mt-3 d-flex justify-content-center">
+            <button type="button" class="btn btn-outline-success" (click)="openModal(item)">Więcej</button>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section" id="spotkania">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-1 mb-3 mr-3">
-          <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-info">
-            <i class="fas fa-route"></i>
-          </div>
-        </div>
-        <div class="col-lg-7">
-          <h2 class="display-3">Spotkania</h2>
-        </div>
-      </div>
+<section class="section bg-secondary" id="pointer">
+  <div class="container">
+    <app-header-section
+      class="mb-2"
+      [title]="'W Mediach'"
+      [icon]="'far fa-newspaper'"
+      [color]="'default'"
+    ></app-header-section>
 
-      <div class="row mt-5">
-        <div *ngFor="let item of spotkania" class="col-md-6 col-lg-4 my-2">
-          <div class="px-4">
+    <div class="row">
+      <div *ngFor="let item of media" class="col-md-6 col-lg-4 my-3 wow fadeIn">
+        <div class="card shadow shadow-lg--hover border-0 px-3 py-4">
+          <div class="px-3">
             <img
-              (click)="open(item)"
-              src="assets/img/spotkania/{{ item.image }}.jpg"
-              class="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-              style="width: 200px;"
+              class="img-center rounded img-fluid shadow img-pointer"
+              src="assets/img/media/{{ item.image }}.jpg"
+              alt="No image"
+              (click)="openModalMedia(item)"
             />
-            <div class="pt-4 text-center">
-              <h5 class="title">
-                <span class="d-block mb-1">{{ item.cardTitle }}</span>
-                <small class="h6 text-muted">{{ item.cardSubtitle }}</small>
-              </h5>
-            </div>
-            <div class="mt-3 d-flex justify-content-center">
-              <button type="button" class="btn btn-outline-success">Więcej</button>
-            </div>
+          </div>
+
+          <div class="text-center">
+            <h5 class="title mt-4" [innerHTML]="item.title"></h5>
+          </div>
+
+          <div class="mt-4 d-flex justify-content-center">
+            <button type="button" class="btn btn-outline-success" (click)="openModalMedia(item)">Więcej</button>
           </div>
         </div>
       </div>
     </div>
-  </section>
-</main>
+  </div>
+</section>

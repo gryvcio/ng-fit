@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgwWowService } from 'ngx-wow';
 
 @Component({
   selector: 'app-home',
@@ -8,26 +8,33 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent {
-  closeResult: string;
-
-  constructor(private modalService: NgbModal) {}
-
-  open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
+  countToOptions = {
+    duration: 4,
+    separator: ' ',
+    suffix: '+',
+  };
+  coffees: Number;
+  workHours: Number;
+  burnKilos: Number;
+  trainings: Number;
+  
+  constructor(private wowService: NgwWowService) {
+    this.wowService.init();
+    this.getData();
   }
 
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
-  }
+  getData() {
+    const workDays = 250;
+    const oneDay = 24 * 60 * 60 * 1000;
+    const startDate = new Date(2015, 10, 1);
+    const today = new Date();
 
+    const diffDays = Math.round(Math.abs((today.getTime() - startDate.getTime()) / oneDay));
+    const diffYears = Math.round(Math.abs(today.getFullYear() - startDate.getFullYear()));
+
+    this.coffees = (diffDays - diffYears * workDays) * 3;
+    this.workHours = (diffDays - diffYears * workDays) * 10;
+    this.burnKilos = (diffDays - diffYears * workDays) * 5.35;
+    this.trainings = (diffDays - diffYears * workDays) * 2.3;
+  }
 }

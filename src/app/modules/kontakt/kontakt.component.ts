@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { NgwWowService } from 'ngx-wow';
 
 @Component({
   selector: 'app-kontakt',
@@ -6,11 +7,16 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   styleUrls: ['./kontakt.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class KontaktComponent implements OnInit {
+export class KontaktComponent {
+  imageBg: string;
+  wskazowkiCount = 7;
+  wskazowkiImage: Number[];
 
-  constructor() { }
+  constructor(private wowService: NgwWowService) {
+    this.wowService.init();
+    this.wskazowkiImage = [1, 2, 3, 4, 5, 6, 7];
 
-  ngOnInit() {
+    const random = Math.floor(Math.random() * 5) + 1;
+    this.imageBg = `/assets/img/bg/kontakt-bg-${random}.jpg`;
   }
-
 }

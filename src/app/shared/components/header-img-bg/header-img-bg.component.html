@@ -1,0 +1,18 @@
+<div
+  class="image-bg"
+  [ngClass]="{ 'darken-pseudo': dark }"
+  [ngStyle]="{ background: 'url(' + imageBg + ') no-repeat ' + positionBgY + ' center / cover fixed' }"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 header-title">
+        <p class="text-white wow fadeInDown slow" data-wow-delay="0.2s" [innerHTML]="subtitle"></p>
+        <h2
+          class="display-2 text-white text-uppercase wow fadeInUp slow"
+          data-wow-delay="0.2s"
+          [innerHTML]="title"
+        ></h2>
+      </div>
+    </div>
+  </div>
+</div>

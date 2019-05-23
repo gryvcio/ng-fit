@@ -1,0 +1,14 @@
+    {
+      title: 'Pani Małgorzata',
+      weight: '&ndash;11,5 kg',
+      image: 'malgorzata-2',
+      description: '
+        <p class=\"font-weight-bold\">Tym razem dosyć nietypowo. Nie sylwetką będziemy motywować a wynikami.</p>
+        <p>Wielkie gratulację. Współpraca zakończona z wynikiem &ndash;11,5 kg masy ciała. Pierwszy pomiar odbył się 2016&ndash;04&ndash;11.</p>
+        <p>W ciągu 2,5 miesiąca Pani Małgorzata&#58</p>
+        <p>* Utraciła ponad 10 kg czystej tkanki tłuszczowej</p>
+        <p>* Wskaźnik BMI spadł o 4,7</p>
+        <p>* Poziom tłuszczu około narządowego zmalał o 5</p>
+        <p>Duże brawa, kolejne wielkie gratulację i najserdeczniejsze podziękowania za współpracę. Trzymam bardzo mocno kciuki za dalsze sukcesy!</p>
+      '
+    },

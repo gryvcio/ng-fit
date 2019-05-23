@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'kontakt', loadChildren: './modules/kontakt/kontakt.module#KontaktModule' }
 ];
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

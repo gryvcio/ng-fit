@@ -1,12 +1,22 @@
 .navbar {
   padding: 8px;
 
+  & .nav-title {
+    letter-spacing: 2px;
+    font-weight: 300;
+  }
+
   & .navbar-brand img {
     height: 45px;
   }
 
   & .navbar-nav .nav-link {
     padding: 8px;
+  }
+
+  // Align icon with navbar item in collapsed mode
+  & .nav-link i:not(.fa) {
+    top: -1px;
   }
 }
 

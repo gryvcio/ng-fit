@@ -1,3 +1,302 @@
-<p>
-  oferta works!
-</p>
+<app-header-img-bg
+  [imageBg]="imageBg"
+  [title]="'Oferta'"
+  [subtitle]="'&mdash; Dowiedz się w czym mogę Ci pomóc!'"
+></app-header-img-bg>
+
+<section class="section">
+  <div class="container">
+    <app-header-section
+      class="mb-3"
+      [title]="'Poradnia Strefa Fit pomoże Ci'"
+      [icon]="'far fa-grin-wink'"
+      [color]="'success'"
+    ></app-header-section>
+
+    <div class="row mt-4">
+      <div class="col-lg-4 col-md-4">
+        <div class="card shadow shadow-lg--hover border-0 wow fadeInUp mb-5" data-wow-delay="0.1s">
+          <div class="card-body py-5">
+            <div class="icon icon-shape icon-shape-warning rounded-circle mb-4">
+              <i class="fas fa-weight"></i>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Ocenie obecnej diety</li>
+              <li class="list-group-item">Terapii nadwagi</li>
+              <li class="list-group-item">Terapii niedowagi</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+        <div class="card shadow shadow-lg--hover border-0 wow fadeInUp mb-5" data-wow-delay="0.2s">
+          <div class="card-body py-5">
+            <div class="icon icon-shape icon-shape-primary rounded-circle mb-4">
+              <i class="fas fa-running"></i>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Zbudowaniu tkanki mięśniowej</li>
+              <li class="list-group-item">Doborze ćwiczeń siłowych/aerobowych</li>
+              <li class="list-group-item">W treningu siłowym / aerobowym</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-4"> 
+        <div class="card shadow shadow-lg--hover border-0 wow fadeInUp mb-5" data-wow-delay="0.3s"> 
+          <div class="card-body py-5">
+            <div class="icon icon-shape icon-shape-success rounded-circle mb-4">
+              <i class="fas fa-apple-alt"></i>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Doborze diety dla wegetarian</li>
+              <li class="list-group-item">Zakupach z dietetykiem</li>
+              <li class="list-group-item">W doborze ewentualnej suplementacji</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-secondary">
+  <div class="container">
+    <app-header-section [title]="'Żywieniu w'" [icon]="'far fa-heart'" [color]="'danger'"></app-header-section>
+
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-5">
+        <ul class="list-unstyled mt-3">
+          <li *ngFor="let item of sickList" class="py-2 wow fadeInLeft">
+            <div class="d-flex align-items-center">
+              <div>
+                <div class="badge badge-circle badge-success mr-3">
+                  <i class="far fa-arrow-alt-circle-right"></i>
+                </div>
+              </div>
+              <div>
+                <h6 class="mb-0">{{ item }}</h6>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-5 mt-3">
+        <img src="./assets/img/oferta-1.jpg" class="img-fluid shadow-lg--hover" />
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <app-header-section
+      [title]="'Przygotowanie do pierwszej wizyty'"
+      [icon]="'far fa-question-circle'"
+      [color]="'warning'"
+    ></app-header-section>
+
+    <div class="row justify-content-center align-items-center mt-2 mb-3">
+      <div class="col-md-5 text-justify mb-4 wow fadeIn">
+        <p>
+          Przed pierwszą wizytą w poradni warto stworzyć listę spożytych produktów przynajmniej z jednego wybranego
+          dnia, optymalnie z 3 dni, pozwoli to na lepszą analizę obecnej diety.
+        </p>
+        <p>
+          Tworząc listę proszę pamiętać o zapisaniu każdego spożytego produktu, godzinie konsumpcji, ilości (gram /
+          wielkość) w tym także płynów.
+        </p>
+      </div>
+      <div class="col-md-5">
+        <div class="card bg-default shadow border-0">
+          <blockquote class="card-blockquote">
+            <h4 class="display-4 text-white wow fadeIn">Przykład:</h4>
+            <p class="text-white wow fadeIn" data-wow-delay="0.1s">8:00 <span class="text-muted">Kawa z mlekiem, kromka jasnego pieczywa</span></p>
+            <p class="text-white wow fadeIn" data-wow-delay="0.3s">12:00 <span class="text-muted">Jabłko, czekolada z orzechami 2 kostki</span></p>
+            <p class="text-white wow fadeIn" data-wow-delay="0.5s">18:00 <span class="text-muted">Talerz makaronu, ser tłusty (pół kostki)</span></p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <p class="text-center mt-5 wow fadeIn">
+          Precyzja w składzie posiłku pozwoli mi na dokładniejszą analizę Twojej dotychczasowej diety. Zawsze zalecam
+          podanie ilości w gramach, ponieważ to jest najdokładniejszą formą dla mnie. W poradni na pierwszej wizycie
+          zostanie przeprowadzony profesjonalny pomiar masy i składu ciała. Zostanie wykorzystana bioimpedancja
+          elektryczna (BIA). Metoda pozwoli przy pomocy przepływu prądu w fazie wodnej jak i tłuszczowej określić
+          zawartość tkanki tłuszczowej, beztłuszczowej masy ciała, stopień nawodnienia organizmu oraz jego podstawową
+          przemianę materii. Badanie składu ciała jest za pomocą BIA. Jest to metoda całkowicie nieinwazyjna i
+          bezpieczna.
+        </p>
+      </div>
+    </div>
+
+    <app-header-section
+      class="mt-5"
+      [title]="'Aby badanie było jak najbardziej miarodajne zaleca się zachowanie kilku zasad'"
+      [icon]="'fas fa-question'"
+      [color]="'danger'"
+    ></app-header-section>
+
+    <div class="row justify-content-center align-items-center mt-2 mb-5">
+      <div class="col-md-5">
+        <ul class="list-unstyled mt-3">
+          <li *ngFor="let item of investigationList" class="py-2 wow fadeInLeft">
+            <div class="d-flex align-items-center">
+              <div>
+                <div class="badge badge-circle badge-success mr-3">
+                  <i class="far fa-arrow-alt-circle-right"></i>
+                </div>
+              </div>
+              <div>
+                <h6 class="mb-0">{{ item }}</h6>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-5 mt-3">
+        <img src="./assets/img/oferta-3.jpg" class="img-fluid shadow-lg--hover" />
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="card bg-gradient-warning shadow-lg text-center border-0 m-1 p-5">
+          <p class="display-4 text-white mt-3 wow fadeIn">
+            Czy na pierwszej wizycie otrzymam rozpiskę diety?
+          </p>
+          <p class="text-white mt-3 wow fadeIn">
+            Tutaj zalecam uzbroić się w cierpliwość. Aby dieta była indywidualna i skomponowana należycie muszę całe
+            mnóstwo informacji przeanalizować i dokładnie ustalić, co będzie dla Ciebie zdrowe, bezpieczne i przede
+            wszystkim da rezultat, jaki oczekujesz. Dzięki temu masz pewność ze program ustalony dla Ciebie będzie
+            idealnie dobrany. Jeśli potrzebujesz pomocy i mojego wsparcia zapraszam serdecznie.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-secondary">
+  <div class="container">
+    <app-header-section
+      class="mb-3"
+      [title]="'Spotkania kontrolne'"
+      [icon]="'fas fa-undo'"
+      [color]="'info'"
+    ></app-header-section>
+
+    <div class="row mt-4 text-justify justify-content-center">
+      <div class="col-lg-4 mb-4">
+        <div class="card shadow shadow-lg--hover border-0 wow fadeInUp" data-wow-delay="0.1s">
+          <div class="card-body py-5">
+            <div class="icon icon-shape icon-shape-primary rounded-circle mb-4">
+              <i class="fas fa-running"></i>
+            </div>
+            <p>
+              Wizyta kontrolna jest bardzo ważnym aspektem spotkań z dietetykiem. Pozwoli to nam na analizę Twoich
+              postępów, zmian sylwetki i zdrowia. Zastosowanie się do moich wskazówek jest receptą tylko i wyłącznie na
+              sukces, jeśli oczywiście wykażesz się wytrwałością w stosowaniu naszego planu.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mb-4">
+        <div class="card shadow shadow-lg--hover border-0 wow fadeInUp" data-wow-delay="0.2s">
+          <div class="card-body py-5">
+            <div class="icon icon-shape icon-shape-success rounded-circle mb-4">
+              <i class="fas fa-apple-alt"></i>
+            </div>
+            <p>
+              Spotkania odbywają się, co około 2-4 tygodni. Jest to czas, w którym najlepiej można podsumować Twoje
+              postępy i ewentualnie wprowadzić zmiany. Oczywiście wszystko jest dopasowane indywidualnie do potrzeb
+              klienta. Na każdej wizycie przeprowadzimy kolejną analizę składu ciała w celu ustalenia, w jakim stopniu
+              zmieniła się Twoja budowa ciała.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mb-4">
+        <div class="card shadow shadow-lg--hover border-0 wow fadeInUp" data-wow-delay="0.3s">
+          <div class="card-body py-5">
+            <div class="icon icon-shape icon-shape-warning rounded-circle mb-4">
+              <i class="fas fa-weight"></i>
+            </div>
+            <p>
+              Każdy pacjent otrzyma specjalistyczny wydruk ukazujący zmiany w tkance tłuszczowej i masie beztłuszczowej.
+              Spotkanie będzie dla Ciebie okazją na zmianę posiłków/ćwiczeń, które Ci nie odpowiadają. Szansą na wspólne
+              rozwianie wszystkich wątpliwości i problemów. Razem będziemy cieszyć się z sukcesów jak i szybko w razie
+              problemów pomogę Ci wstać po możliwych upadkach.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-10 text-center mt-4">
+        <p class="display-4">
+          Jestem przekonany, że razem damy rade!
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <app-header-section
+      [title]="'Analizator składu ciała InBody'"
+      [icon]="'fas fa-chart-line'"
+      [color]="'success'"
+    ></app-header-section>
+
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-8 align-self-end wow fadeIn">
+        <p>
+          Nie tylko ustalanie diet ale także analiza składu ciała jest bardzo istotna. Analizator InBody sprawdzi Twoją:
+        </p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div *ngFor="let card of analizatorList" class="col-lg-6 mb-5">
+        <div class="card shadow shadow-lg--hover wow fadeIn">
+          <div class="card-body py-5">
+            <div class="icon icon-shape bg-gradient-{{ card.color }} rounded-circle text-white mb-4">
+              <i class="{{ card.icon }}"></i>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li *ngFor="let el of card.items" class="list-group-item">{{ el }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center align-items-center mt-5">
+      <div class="col-lg-5 order-md-1">
+        <p class="text-center wow fadeIn">
+          Działa to na zasadzie bioimpedancji elektrycznej, która pozwala obliczyć skład ciała wysyłając o bardzo niskim
+          natężeniu bezpieczny sygnał elektryczny przez ciało za pomocą metalowych elektrod wbudowanych w platformę wagi
+          jak i przez uchwyty trzymane w dłoniach. Sygnał elektryczny przechodzi swobodnie przez płyny zawarte w
+          tkankach chudych, takich jak mięśnie i krew, lecz spotyka opór przepływając przez tkanki tłuszczowe.
+          Analizatory składu ciała InBody dokładnie mierzy ten opór i otrzymane wartości używa do obliczenia elementów
+          składu ciała. Ten opór zwany „impedancja” jest ustawiony na płeć, wysokość, wiek, budowę normalną lub
+          sportowca i jest wykorzystywany do obliczenia spersonalizowanej zawartości tłuszczu i odczytu innych
+          komponentów składu ciała człowieka.
+        </p>
+      </div>
+      <div class="col-md-5 order-md-2 mt-5">
+        <img src="./assets/img/oferta-2.jpg" class="img-fluid shadow-lg--hover" />
+      </div>
+    </div>
+  </div>
+</section>

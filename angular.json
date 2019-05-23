@@ -27,11 +27,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/assets/vendor/font-awesome/css/all.min.css",
-              "src/assets/scss/argon.scss",
+              "./node_modules/ng-masonry-grid/ng-masonry-grid.css",
+              "./node_modules/animate.css/animate.min.css",
+              "src/styles/argon.scss",
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "./node_modules/wowjs/dist/wow.min.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {

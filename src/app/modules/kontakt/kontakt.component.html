@@ -1,3 +1,130 @@
-<section class="d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 55px)">
-  <img src="./assets/img/nierobie.png" class="img-fluid floating" />
+<app-header-img-bg
+  [imageBg]="imageBg"
+  [title]="'Kontakt'"
+  [subtitle]="'&mdash; Napisz lub zadzwoń do mnie!'"
+></app-header-img-bg>
+
+<section class="section pb-2">
+  <div class="container">
+    <app-header-section
+      [title]="'Poradnia Dietetyczna &bdquo;Strefa Fit&rdquo;'"
+      [icon]="'far fa-address-card'"
+      [color]="'success'"
+    ></app-header-section>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="row">
+          <div class="col-lg-2 d-flex justify-content-center align-items-center">
+            <div class="icon icon-shape bg-gradient-info rounded-circle text-white">
+              <i class="far fa-clock"></i>
+            </div>
+          </div>
+          <div class="col-lg-10">
+            <h3 class="mt-3">Godziny otwarcia:</h3>
+            <div class="open-houres">
+              <p class="font-weight-bold mr-2 wow fadeInLeft">Poniedziałek & Środa & Piątek:</p>
+              <p class="wow fadeInLeft">7:00 &ndash; 15:00</p>
+            </div>
+            <div class="open-houres">
+              <p class="font-weight-bold mr-2 wow fadeInLeft">Wtorek & Czwartek:</p>
+              <p class="wow fadeInLeft">12:00 &ndash; 20:00</p>
+            </div>
+            <div class="open-houres">
+              <p class="font-weight-bold mr-2 wow fadeInLeft">Sobota &ndash; co druga:</p>
+              <p class="wow fadeInLeft">7:00 &ndash; 15:00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-2 d-flex justify-content-center align-items-center">
+            <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+          </div>
+          <div class="col-lg-10">
+            <h3 class="mt-3">Telefon:</h3>
+            <p class="lead mt-0 wow fadeInLeft">792 569 925</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-2 d-flex justify-content-center align-items-center">
+            <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+              <i class="far fa-envelope-open"></i>
+            </div>
+          </div>
+          <div class="col-lg-10">
+            <h3 class="mt-3">Mail:</h3>
+            <p class="lead mt-0 wow fadeInLeft"><a href="mailto:klimekm@strefafit24.pl">klimekm@strefafit24.pl</a></p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-2 d-flex justify-content-center align-items-center">
+            <div class="icon icon-shape bg-gradient-default rounded-circle text-white">
+              <i class="fas fa-globe-europe"></i>
+            </div>
+          </div>
+          <div class="col-lg-10">
+            <h3 class="mt-3">Adres:</h3>
+            <p class="lead my-0 wow fadeInLeft">ul.Rynek 21</p>
+            <p class="lead my-0 wow fadeInLeft">33-340 Stary Sącz</p>
+          </div>
+        </div>
+
+        <div class="text-center mt-5 wow fadeIn">
+          <p>
+            Proszę o wcześniejszy kontakt telefoniczny bądź mailowy w celu umówienia się na spoktanie ewentualnie w
+            przypadku pytań.
+          </p>
+          <p>W razie gdybym nie odbierał telefonu postaram się odzwonić jeszcze w ten sam dzień.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 d-flex align-items-center">
+        <img src="./assets/img/kontakt-1.jpg" class="img-fluid shadow-lg--hover" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-secondary">
+  <div class="container">
+    <app-header-section [title]="'Mapa'" [icon]="'fas fa-map-marker-alt'" [color]="'warning'"></app-header-section>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="w-100">
+          <iframe
+            width="100%"
+            height="600"
+            src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=49.56445, 20.63562&amp;q=33-340%20Stary%20S%C4%85cz%2C%20ul.%20Rynek%2021+(Strefa%20Fit!)&amp;ie=UTF8&amp;t=&amp;z=18&amp;iwloc=B&amp;output=embed"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+          >
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <app-header-section [title]="'Wskazówki'" [icon]="'far fa-compass'" [color]="'info'"></app-header-section>
+
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <img
+          *ngFor="let num of wskazowkiImage"
+          src="assets/img/wskazowki-{{ num }}.jpg"
+          class="img-fluid rounded mx-auto d-block m-2"
+        />
+      </div>
+    </div>
+  </div>
 </section>

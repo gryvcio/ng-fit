@@ -1,0 +1,24 @@
+ng-masonry-grid {
+  width: 100%;
+
+  .grid-item {
+    width: calc(33.33% - 20px) !important;
+  }
+
+  @media screen and (max-width: 991px) {
+    .grid-item {
+      width: calc(50% - 17px) !important;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .grid-item {
+      width: 100% !important;
+    }
+  }
+}
+
+.grid {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}

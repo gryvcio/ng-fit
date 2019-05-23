@@ -15,27 +15,33 @@ export class HeaderComponent {
   pages = [
     {
       title: 'Strona Główna',
-      url: ''
+      url: '',
+      icon: 'fas fa-home'
     },
     {
       title: 'Poradnia',
-      url: 'poradnia'
+      url: 'poradnia',
+      icon: 'fas fa-couch'
     },
     {
       title: 'Oferta',
-      url: 'oferta'
+      url: 'oferta',
+      icon: 'fas fa-coffee'
     },
     {
       title: 'Metamorfozy',
-      url: 'metamorfozy'
+      url: 'metamorfozy',
+      icon: 'far fa-hand-peace'
     },
     {
       title: 'Ciekawostki',
-      url: 'ciekawostki'
+      url: 'ciekawostki',
+      icon: 'far fa-newspaper'
     },
     {
       title: 'Kontakt',
-      url: 'kontakt'
+      url: 'kontakt',
+      icon: 'far fa-envelope'
     }
   ]
 

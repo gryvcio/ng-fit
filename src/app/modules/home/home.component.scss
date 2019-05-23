@@ -1,15 +1,13 @@
-.section-profile-cover {
-  background: url('/assets/img/profile-bg.png') no-repeat center center fixed;
-  background-size: cover;
-  height: 60vh;
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+
+.profile-page .card-profile .card-profile-image img {
+  box-shadow: none !important;
+}
+
+.card-profile-image {
+  top: 50px;
 }
 
 @media (max-width: 991.98px) {
-  .section-profile-cover {
-    height: 40vh;
-  }
-
   .col-lg-4.order-lg-1 .card-profile-stats {
     margin-top: 140px;
   }
