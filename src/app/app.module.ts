@@ -22,7 +22,7 @@ import { ModalSpotkaniaComponent } from './modules/poradnia/components/modal-spo
     ModalBlogComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule,
     RouterModule,
     AppRoutingModule,
     NgbModule
