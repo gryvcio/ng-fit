@@ -19,10 +19,15 @@ export interface People {
 })
 export class MetamorfozyComponent {
   imageBg: string;
-  loadedImg = 15;
+  loadedImg = 5;
   lastLoadedImg = 0;
-  step = 15;
-  loadOlders = true;
+  step = 5;
+  // loadOlders = true;
+
+  throttle = 300;
+  scrollDistance = 1;
+  scrollUpDistance = 2;
+
   people: Array<People>;
   peopleInit: Array<People>;
   people2: Array<People> = [
@@ -573,9 +578,12 @@ export class MetamorfozyComponent {
     this.lastLoadedImg = this.loadedImg;
     this.people = this.peopleInit.slice(0, this.loadedImg);
     this.loadedImg += this.step;
-    if (this.lastLoadedImg >= this.peopleInit.length) {
-      this.loadOlders = false;
-    }
+    // if (this.lastLoadedImg >= this.peopleInit.length) {
+    //   this.loadOlders = false;
+    // }
   }
 
+  onScrollDown() {
+    this.loadOlder();
+  }
 }
