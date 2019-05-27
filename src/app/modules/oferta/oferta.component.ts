@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RandomService } from 'src/app/core/services/random.service';
 
 @Component({
   selector: 'app-oferta',
@@ -78,8 +79,7 @@ export class OfertaComponent {
     }
   ];
 
-  constructor() {
-    const random = Math.floor(Math.random() * 5) + 1;
-    this.imageBg = `/assets/img/bg/oferta-bg-${random}.jpg`;
+  constructor(private randomBg: RandomService) {
+    this.imageBg = randomBg.getRandomBg('oferta');
   }
 }

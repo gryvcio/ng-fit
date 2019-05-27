@@ -21,11 +21,11 @@
 }
 
 .nav-black {
-  background-color: rgba(0, 0, 0, 0.3) !important;
+  background-color: var(--black-30) !important;
   transition: background-color 300ms linear;
 }
 
 .bg-success {
-  background-color: rgba(45, 206, 137, 0.8) !important;
+  background-color: var(--green-80) !important;
   transition: background-color 300ms linear;
 }

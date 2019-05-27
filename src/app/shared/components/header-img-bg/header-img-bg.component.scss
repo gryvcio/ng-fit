@@ -20,12 +20,12 @@
   left: 0;
   right: 0;
   display: block;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: var(--black-70);
 }
 
 .header-title {
   letter-spacing: 3px;
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+  text-shadow: 3px 3px 6px var(--black-80);
   z-index: 1;
 
   p {

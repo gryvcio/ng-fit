@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgwWowService } from 'ngx-wow';
+import { RandomService } from 'src/app/core/services/random.service';
 import { ModalMediaComponent } from './components/modal-media/modal-media.component';
 import { ModalSpotkaniaComponent } from './components/modal-spotkania/modal-spotkania.component';
 
@@ -199,6 +200,7 @@ export class PoradniaComponent {
       `
     }
   ];
+  
   media = [
     {
       title: 'Wieści Podegrodzkie',
@@ -217,11 +219,9 @@ export class PoradniaComponent {
     }
   ];
 
-  constructor(private modalService: NgbModal, private wowService: NgwWowService) {
+  constructor(private modalService: NgbModal, private wowService: NgwWowService, private randomBg: RandomService) {
     this.wowService.init();
-    
-    const random = Math.floor(Math.random() * 5) + 1;
-    this.imageBg = `/assets/img/bg/poradnia-bg-${random}.jpg`;
+    this.imageBg = randomBg.getRandomBg('poradnia');
   }
 
   openModal(item) {

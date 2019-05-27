@@ -1,12 +1,12 @@
 /*!
 
 =========================================================
-* Argon Design System Angular - v1.0.0
+* Argon Design System - v1.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/argon-design-system-angular
+* Product Page: https://www.creative-tim.com/product/argon-design-system
 * Copyright 2018 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-design-system-angular/blob/master/LICENSE.md)
+* Licensed under MIT (https://github.com/creativetimofficial/argon-design-system/blob/master/LICENSE.md)
 
 * Coded by www.creative-tim.com
 
@@ -99,12 +99,3 @@
 @import "custom/vendor/bootstrap-datepicker.scss";
 @import "custom/vendor/headroom.scss";
 @import "custom/vendor/nouislider.scss";
-
-
-// Angular diferences
-@import "angular/alerts.scss";
-@import "angular/navbar.scss";
-@import "angular/dropdowns.scss";
-@import "angular/tabs.scss";
-@import "angular/datepicker.scss";
-@import "angular/input-group.scss";

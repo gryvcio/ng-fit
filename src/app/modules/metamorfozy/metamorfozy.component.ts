@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgwWowService } from 'ngx-wow';
+import { RandomService } from 'src/app/core/services/random.service';
 import { ModalPeopleComponent } from './components/modal-people/modal-people.component';
 
 @Component({
@@ -533,13 +534,12 @@ export class MetamorfozyComponent {
     private modalService: NgbModal,
     private wowService: NgwWowService,
     private http: HttpClient,
+    private randomBg: RandomService,
     private cd: ChangeDetectorRef
   ) {
     this.getData();
     this.wowService.init();
-
-    const random = Math.floor(Math.random() * 5) + 1;
-    this.imageBg = `/assets/img/bg/metamorfozy-bg-${random}.jpg`;
+    this.imageBg = randomBg.getRandomBg('metamorfozy');
   }
 
   openModal(item) {

@@ -1,15 +1,3 @@
-$blue:    #5e72e4 !default;
-$indigo:  #5603ad !default;
-$purple:  #8965e0 !default;
-$pink:    #f3a4b5 !default;
-$red:     #f5365c !default;
-$orange:  #fb6340 !default;
-$yellow:  #ffd600 !default;
-$green:   #2dce89 !default;
-$teal:    #11cdef !default;
-$cyan:    #2bffc6 !default;
-$gray-600: #8898aa !default;   // Line footer color
-
 .main-timeline {
   position: relative;
 }
@@ -19,7 +7,7 @@ $gray-600: #8898aa !default;   // Line footer color
   height: 100%;
   border-radius: 20px;
   margin: 0 auto;
-  background: $gray-600;
+  background: var(--gray-600);
   position: absolute;
   top: 0;
   left: 0;
@@ -36,7 +24,7 @@ $gray-600: #8898aa !default;   // Line footer color
   height: 20px;
   border-radius: 50%;
   border: 4px solid #fff;
-  background: $green;
+  background: var(--green);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -51,7 +39,7 @@ $gray-600: #8898aa !default;   // Line footer color
   width: 300px; // PG
   height: 300px; // PG
   border-radius: 50%;
-  border: 3px solid $green;
+  border: 3px solid var(--green);
   // padding: 13px;
   padding: 5px; // PG
   text-align: center;
@@ -64,7 +52,7 @@ $gray-600: #8898aa !default;   // Line footer color
 .main-timeline .timeline-icon i {
   display: block;
   border-radius: 50%;
-  background: $green;
+  background: var(--green);
   font-size: 64px;
   color: #fff;
   line-height: 100px;
@@ -76,7 +64,7 @@ $gray-600: #8898aa !default;   // Line footer color
   content: '';
   width: 100px;
   height: 4px;
-  background: $green;
+  background: var(--green);
   position: absolute;
   top: 50%;
   right: -100px;
@@ -101,7 +89,7 @@ $gray-600: #8898aa !default;   // Line footer color
   content: '';
   width: 70%;
   height: 100%;
-  border: 3px solid $green;
+  border: 3px solid var(--green);
   border-top: none;
   border-right: none;
   position: absolute;
@@ -112,7 +100,7 @@ $gray-600: #8898aa !default;   // Line footer color
   content: '';
   width: 37px;
   height: 3px;
-  background: $green;
+  background: var(--green);
   position: absolute;
   top: 13px;
   left: 0;
@@ -120,7 +108,7 @@ $gray-600: #8898aa !default;   // Line footer color
 .main-timeline .title {
   font-size: 20px;
   font-weight: 600;
-  color: $green;
+  color: var(--green);
   text-transform: uppercase;
   margin: 0 0 5px;
 }
@@ -159,81 +147,81 @@ $gray-600: #8898aa !default;   // Line footer color
 }
 
 .main-timeline .timeline:nth-child(2n) .btn-custom {
-    color: $teal;
-    border-color: $teal;
+    color: var(--teal);
+    border-color: var(--teal);
 }
 .main-timeline .timeline:nth-child(2n) .btn-custom:hover {
     color: #fff;
-    background-color: $teal;
-    border-color: $teal;
+    background-color: var(--teal);
+    border-color: var(--teal);
 }
 .main-timeline .timeline:nth-child(2n) .timeline-content:after,
 .main-timeline .timeline:nth-child(2n) .timeline-icon i,
 .main-timeline .timeline:nth-child(2n) .timeline-icon:before,
 .main-timeline .timeline:nth-child(2n):before {
-  background: $teal;
+  background: var(--teal);
 }
 .main-timeline .timeline:nth-child(2n) .timeline-icon {
-  border-color: $teal;
+  border-color: var(--teal);
 }
 .main-timeline .timeline:nth-child(2n) .title {
-  color: $teal;
+  color: var(--teal);
 }
 .main-timeline .timeline:nth-child(2n) .timeline-content:before {
-  border-left-color: $teal;
-  border-bottom-color: $teal;
+  border-left-color: var(--teal);
+  border-bottom-color: var(--teal);
 }
 
 .main-timeline .timeline:nth-child(3n) .btn-custom {
-  color: $blue;
-  border-color: $blue;
+  color: var(--blue);
+  border-color: var(--blue);
 }
 .main-timeline .timeline:nth-child(3n) .btn-custom:hover {
   color: #fff;
-  background-color: $blue;
-  border-color: $blue;
+  background-color: var(--blue);
+  border-color: var(--blue);
 }
 .main-timeline .timeline:nth-child(3n) .timeline-content:after,
 .main-timeline .timeline:nth-child(3n) .timeline-icon i,
 .main-timeline .timeline:nth-child(3n) .timeline-icon:before,
 .main-timeline .timeline:nth-child(3n):before {
-  background: $blue;
+  background: var(--blue);
 }
 .main-timeline .timeline:nth-child(3n) .timeline-icon {
-  border-color: $blue;
+  border-color: var(--blue);
 }
 .main-timeline .timeline:nth-child(3n) .title {
-  color: $blue;
+  color: var(--blue);
 }
 .main-timeline .timeline:nth-child(3n) .timeline-content:before {
-  border-left-color: $blue;
-  border-bottom-color: $blue;
+  border-left-color: var(--blue);
+  border-bottom-color: var(--blue);
 }
 
 .main-timeline .timeline:nth-child(4n) .btn-custom {
-  color: $orange;
-  border-color: $orange;
+  color: var(--orange);
+  border-color: var(--orange);
 }
 .main-timeline .timeline:nth-child(4n) .btn-custom:hover {
   color: #fff;
-  background-color: $orange;
-  border-color: $orange;
+  background-color: var(--orange);
+  border-color: var(--orange);
 }
 .main-timeline .timeline:nth-child(4n) .timeline-content:after,
 .main-timeline .timeline:nth-child(4n) .timeline-icon i,
 .main-timeline .timeline:nth-child(4n) .timeline-icon:before,
 .main-timeline .timeline:nth-child(4n):before {
-  background: $orange;
+  background: var(--orange);
 }
 .main-timeline .timeline:nth-child(4n) .timeline-icon {
-  border-color: $orange;
+  border-color: var(--orange);
 }
 .main-timeline .timeline:nth-child(4n) .title {
-  color: $orange;
+  color: var(--orange);
 }
 .main-timeline .timeline:nth-child(4n) .timeline-content:before {
-  border-left-color: $orange;
-  border-bottom-color: $orange;
+  border-left-color: var(--orange);
+  border-bottom-color: var(--orange);
 }
 @media only screen and (max-width: 1200px) {
   .main-timeline .timeline-icon:before {
