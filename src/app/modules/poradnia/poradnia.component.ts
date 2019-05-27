@@ -13,12 +13,13 @@ import { ModalSpotkaniaComponent } from './components/modal-spotkania/modal-spot
 })
 export class PoradniaComponent {
   imageBg: string;
-
+    
   spotkania = [
     {
       cardTitle: 'Zespół Szkół',
       cardSubtitle: 'Gołkowice Dolne i Czarny Potok',
       image: 'golkowice',
+      imageUrl: 'assets/img/spotkania/golkowice.jpg',
       count: 11,
       title: 'Szkoła w Gołkowicach Dolnych i Czarnym Potoku',
       description: `
@@ -31,6 +32,7 @@ export class PoradniaComponent {
       cardTitle: 'Szkoła Podstawowa',
       cardSubtitle: 'Olszana',
       image: 'olszana',
+      imageUrl: 'assets/img/spotkania/olszana.jpg',
       count: 2,
       title: 'Szkoła Podstawowa w Olszanie',
       description: `
@@ -44,6 +46,7 @@ export class PoradniaComponent {
       cardTitle: 'Gimnazjum',
       cardSubtitle: 'Jazowsko',
       image: 'jazowsko',
+      imageUrl: 'assets/img/spotkania/jazowsko.jpg',
       count: 6,
       title: 'Gimnazjum w Jazowsku',
       description: `
@@ -58,6 +61,7 @@ export class PoradniaComponent {
       cardTitle: 'Szkoła Podstawowa',
       cardSubtitle: 'Jazowsko',
       image: 'jazowsko-pods',
+      imageUrl: 'assets/img/spotkania/jazowsko-pods.jpg',
       count: 6,
       title: 'Szkoła Podstawowa w Jazowsku',
       description: `
@@ -71,6 +75,7 @@ export class PoradniaComponent {
       cardTitle: 'Hala Widowiskowo &ndash; Sportowa ',
       cardSubtitle: 'Łącko',
       image: 'lacko-hala',
+      imageUrl: 'assets/img/spotkania/lacko-hala.jpg',
       count: 1,
       title: 'Hala Widowiskowo &ndash; Sportowa w Łącku',
       description: `
@@ -83,6 +88,7 @@ export class PoradniaComponent {
       cardTitle: 'Stowarzyszenie na Rzecz Osób Niepełnosprawnych',
       cardSubtitle: '<em>&bdquo;Gniazdo&rdquo;</em>',
       image: 'gniazdo',
+      imageUrl: 'assets/img/spotkania/gniazdo.jpg',
       count: 6,
       title: 'Stowarzyszenie na Rzecz Osób Niepełnosprawnych <em>&bdquo;Gniazdo&rdquo;</em>',
       description: `
@@ -95,6 +101,7 @@ export class PoradniaComponent {
       cardTitle: 'Szkoła Podstawowa nr 1',
       cardSubtitle: 'Kamienica',
       image: 'kamienica-pods',
+      imageUrl: 'assets/img/spotkania/kamienica-pods.jpg',
       count: 8,
       title: 'Szkoła Podstawowa nr 1 w Kamienicy',
       description: `
@@ -107,6 +114,7 @@ export class PoradniaComponent {
       cardTitle: 'Zespół Szkolno &ndash; Gimnazjalny',
       cardSubtitle: 'Łącko',
       image: 'lacko-gim',
+      imageUrl: 'assets/img/spotkania/lacko-gim.jpg',
       count: 5,
       title: 'Zespół Szkolno &ndash; Gimnazjalny w Łącku',
       description: `
@@ -117,6 +125,7 @@ export class PoradniaComponent {
       cardTitle: 'Miejskie Przedszkole nr 7',
       cardSubtitle: 'Nowy Sącz',
       image: 'ns-przed',
+      imageUrl: 'assets/img/spotkania/ns-przed.jpg',
       count: 3,
       title: 'Miejskie Przedszkole nr 7 w Nowym Sączu',
       description: `
@@ -127,6 +136,7 @@ export class PoradniaComponent {
       cardTitle: 'Zespół Szkolno &ndash; Gimnazjalny &mdash; warsztaty',
       cardSubtitle: 'Łącko',
       image: 'lacko-war',
+      imageUrl: 'assets/img/spotkania/lacko-war.jpg',
       count: 5,
       title: 'Zespół Szkolno &ndash; Gimnazjalny w Łącku &mdash; warsztaty',
       description: `
@@ -142,6 +152,7 @@ export class PoradniaComponent {
       cardTitle: 'Szkoła Podstawowa',
       cardSubtitle: 'Olszana',
       image: 'olszana-pod',
+      imageUrl: 'assets/img/spotkania/olszana-pod.jpg',
       count: 4,
       title: 'Szkoła Podstawowa w Olszanie',
       description: `
@@ -154,6 +165,7 @@ export class PoradniaComponent {
       cardTitle: 'Szkoła Podstawowa',
       cardSubtitle: 'Gołkowice',
       image: 'golkowice-pod',
+      imageUrl: 'assets/img/spotkania/golkowice-pod.jpg',
       count: 2,
       title: 'Szkoła Podstawowa w Gołkowicach',
       description: `
@@ -166,6 +178,7 @@ export class PoradniaComponent {
       cardTitle: 'Zespół Szkolno &ndash; Gimnazjalny &mdash; warsztaty nr 2',
       cardSubtitle: 'Łącko',
       image: 'lacko-war-nr2',
+      imageUrl: 'assets/img/spotkania/lacko-war-nr2.jpg',
       count: 4,
       title: 'Zespół Szkolno &ndash; Gimnazjalny w Łącku &mdash; warsztaty nr 2',
       description: `
@@ -178,6 +191,7 @@ export class PoradniaComponent {
       cardTitle: 'Warsztaty Terapii Zajęciowej',
       cardSubtitle: 'Czarny Potok',
       image: 'czarny-potok',
+      imageUrl: 'assets/img/spotkania/czarny-potok.jpg',
       count: 7,
       title: 'Warsztaty Terapii Zajęciowej <em>&bdquo;Czarny Potok&rdquo;</em>',
       description: `
@@ -190,6 +204,7 @@ export class PoradniaComponent {
       cardTitle: 'Przedszkole',
       cardSubtitle: '<em>&bdquo;Misiek&rdquo;</em>',
       image: 'misiek',
+      imageUrl: 'assets/img/spotkania/misiek.jpg',
       count: 6,
       title: 'Przedszkole <em>&bdquo;Misiek&rdquo;</em>',
       description: `
@@ -205,16 +220,19 @@ export class PoradniaComponent {
     {
       title: 'Wieści Podegrodzkie',
       image: 'podegrodzkie',
+      imageUrl: 'assets/img/media/podegrodzkie.jpg',
       count: 1
     },
     {
       title: 'Dobry Tygodnik Sądecki',
       image: 'sadecki',
+      imageUrl: 'assets/img/media/sadecki.jpg',
       count: 4
     },
     {
       title: 'Gazeta Krakowska',
       image: 'krakowska',
+      imageUrl: 'assets/img/media/krakowska.jpg',
       count: 1
     }
   ];
