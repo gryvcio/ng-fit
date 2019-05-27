@@ -1,15 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LazyLoadModule } from 'src/app/core/directives/lazy-load.module';
 import { SharedModule } from '../../shared/shared.module';
 import { OfertaComponent } from './oferta.component';
 
-const routes: Routes = [
-  { path: '', component: OfertaComponent }
-]
+const routes: Routes = [{ path: '', component: OfertaComponent }];
 
 @NgModule({
-  imports: [ CommonModule, RouterModule.forChild(routes), SharedModule ],
-  declarations: [ OfertaComponent ]
+  imports: [CommonModule, RouterModule.forChild(routes), SharedModule, LazyLoadModule],
+  declarations: [OfertaComponent]
 })
-export class OfertaModule { }
+export class OfertaModule {}

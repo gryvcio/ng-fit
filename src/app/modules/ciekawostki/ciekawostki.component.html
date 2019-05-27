@@ -19,7 +19,8 @@
           <a *ngFor="let item of blogList" class="timeline wow fadeIn fast">
             <div class="timeline-icon">
               <img
-                src="assets/img/blog/thumb/{{ item.image }}-thumb.jpg"
+                lazy-load
+                [src]="item.imageUrl"
                 class="rounded-circle img-center img-fluid shadow shadow-lg--hover"
                 style="width: 300px;"
                 alt="No image"

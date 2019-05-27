@@ -2,7 +2,15 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalBlogComponent } from './modal-people/modal-blog.component';
 import { NgwWowService } from 'ngx-wow';
+import { RandomService } from 'src/app/core/services/random.service';
 
+export interface Blog {
+  title: string;
+  date: string;
+  image: string;
+  imageUrl?: string;
+  description: string;
+}
 @Component({
   selector: 'app-ciekawostki',
   templateUrl: './ciekawostki.component.html',
@@ -11,12 +19,12 @@ import { NgwWowService } from 'ngx-wow';
 })
 export class CiekawostkiComponent {
   imageBg: string;
-  total = 10;
-  lastTotal = 0;
+  loadedImg = 10;
+  lastLoadedImg = 0;
   step = 10;
   loadOlders = true;
-  blogList;
-  blogListInit = [
+  blogList: Array<Blog>;
+  blogListInit: Array<Blog> = [
     {
       title: '8 Marca',
       date: '2019-03-08',
@@ -730,24 +738,29 @@ export class CiekawostkiComponent {
     }
   ];
 
-  constructor(private modalService: NgbModal, private wowService: NgwWowService) {
-    this.wowService.init();
+  constructor(private modalService: NgbModal, private wowService: NgwWowService, private randomBg: RandomService) {
     this.loadOlder();
+    this.wowService.init();
+    this.imageBg = randomBg.getRandomBg('ciekawostki');
+  }
 
-    const random = Math.floor(Math.random() * 5) + 1;
-    this.imageBg = `/assets/img/bg/ciekawostki-bg-${random}.jpg`;
+  updateImgUrl(arr: Array<Blog>) {
+    arr.forEach(el => {
+      el.imageUrl = `assets/img/blog/thumb/${el.image}-thumb.jpg`;
+    });
   }
 
   loadOlder() {
-    this.lastTotal = this.total;
-    this.blogList = this.blogListInit.slice(0, this.total);
-    this.total += this.step;
-    if (this.lastTotal >= this.blogListInit.length) {
+    this.lastLoadedImg = this.loadedImg;
+    this.blogList = this.blogListInit.slice(0, this.loadedImg);
+    this.loadedImg += this.step;
+    if (this.lastLoadedImg >= this.blogListInit.length) {
       this.loadOlders = false;
     }
+    this.updateImgUrl(this.blogList);
   }
 
-  openModal(item) {
+  openModal(item: Blog) {
     const modalRef = this.modalService.open(ModalBlogComponent, { size: 'lg' });
     modalRef.componentInstance.item = item;
   }

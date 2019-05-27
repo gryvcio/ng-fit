@@ -26,8 +26,9 @@
           <div class="px-3">
             <a href="https://www.youtube.com/watch?v=qVwgjCKkWgE" target="_blank">
               <img
+                lazy-load
                 class="img-center rounded img-fluid shadow shadow-lg--hover img-pointer"
-                src="assets/img/people/mateusz.jpg"
+                [src]="'assets/img/people/mateusz.jpg'"
               />
             </a>
           </div>
@@ -83,10 +84,9 @@
       [useImagesLoaded]="true"
     >
       <ng-masonry-grid-item
-        class="card shadow border-0 grid-item px-3 py-4 wow fadeIn fast"
-        data-wow-delay="0.3s"
-        id="{{ 'masonry-item-' + i }}"
         *ngFor="let item of people; let i = index"
+        class="card shadow border-0 grid-item px-3 py-4"
+        id="{{ 'masonry-item-' + i }}"
       >
         <div class="text-center">
           <h5 class="title">
@@ -97,8 +97,8 @@
 
         <div class="px-3">
           <img
-            class="img-center rounded img-fluid shadow shadow-lg--hover img-pointer"
             src="assets/img/people/thumb/{{ item.image }}-thumb.jpg"
+            class="img-center rounded img-fluid shadow shadow-lg--hover img-pointer"
             alt="No image"
             (click)="openModal(item)"
           />
@@ -109,6 +109,9 @@
         </div>
       </ng-masonry-grid-item>
     </ng-masonry-grid>
+  </div>
+  <div *ngIf="loadOlders" class="d-flex align-items-center justify-content-center mt-3">
+    <button class="btn btn-outline-success mt-5" (click)="loadOlder()">Więcej Metamorfoz</button>
   </div>
 </section>
 

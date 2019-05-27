@@ -84,7 +84,7 @@
       </div>
 
       <div class="col-lg-4 d-flex align-items-center">
-        <img src="./assets/img/kontakt-1.jpg" class="img-fluid shadow-lg--hover" />
+        <img lazy-load [src]="'assets/img/kontakt-1.jpg'" class="img-fluid shadow-lg--hover" />
       </div>
     </div>
   </div>
@@ -119,12 +119,9 @@
 
     <div class="row justify-content-center">
       <div class="col-md-10">
-        <img
-          *ngFor="let num of wskazowkiImage"
-          src="assets/img/wskazowki-{{ num }}.jpg"
-          class="img-fluid rounded mx-auto d-block m-2"
-        />
+        <img *ngFor="let item of hints" lazy-load [src]="item" class="img-fluid rounded mx-auto d-block m-2" />
       </div>
     </div>
+    
   </div>
 </section>

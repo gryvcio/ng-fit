@@ -5,6 +5,12 @@ import { NgwWowService } from 'ngx-wow';
 import { RandomService } from 'src/app/core/services/random.service';
 import { ModalPeopleComponent } from './components/modal-people/modal-people.component';
 
+export interface People {
+  title: string,
+  weight: string,
+  image: string,
+  description: string
+}
 @Component({
   selector: 'app-metamorfozy',
   templateUrl: './metamorfozy.component.html',
@@ -13,8 +19,13 @@ import { ModalPeopleComponent } from './components/modal-people/modal-people.com
 })
 export class MetamorfozyComponent {
   imageBg: string;
-  people;
-  people2 = [
+  loadedImg = 15;
+  lastLoadedImg = 0;
+  step = 15;
+  loadOlders = true;
+  people: Array<People>;
+  peopleInit: Array<People>;
+  people2: Array<People> = [
     {
       title: 'Pani Martyna',
       weight: '&ndash;17 kg',
@@ -542,7 +553,7 @@ export class MetamorfozyComponent {
     this.imageBg = randomBg.getRandomBg('metamorfozy');
   }
 
-  openModal(item) {
+  openModal(item: People) {
     const modalRef = this.modalService.open(ModalPeopleComponent, { size: 'lg' });
     modalRef.componentInstance.item = item;
   }
@@ -552,8 +563,19 @@ export class MetamorfozyComponent {
       let json = data.replace(/(\r\n|\n|\r)/gm, '');
       json = json.replace(/([a-zA-Z0-9]+?):/g, '"$1":');
       json = json.replace(/'/g, '"');
-      this.people = JSON.parse(json);
+      this.peopleInit = JSON.parse(json);
+      this.loadOlder();
       this.cd.detectChanges();
     });
   }
+
+  loadOlder() {
+    this.lastLoadedImg = this.loadedImg;
+    this.people = this.peopleInit.slice(0, this.loadedImg);
+    this.loadedImg += this.step;
+    if (this.lastLoadedImg >= this.peopleInit.length) {
+      this.loadOlders = false;
+    }
+  }
+
 }

@@ -10,13 +10,17 @@ import { RandomService } from 'src/app/core/services/random.service';
 })
 export class KontaktComponent {
   imageBg: string;
-  wskazowkiCount = 7;
-  wskazowkiImage: Number[];
+  hints: Array<string> = [];
 
   constructor(private wowService: NgwWowService, private randomBg: RandomService) {
     this.wowService.init();
     this.imageBg = randomBg.getRandomBg('kontakt');
-    
-    this.wskazowkiImage = [1, 2, 3, 4, 5, 6, 7];
+    this.updateImgUrl(this.hints);
+  }
+
+  updateImgUrl(arr: Array<string>) {
+    for (let i = 0; i < 8; i++) {
+      arr[i] = `assets/img/wskazowki-${i + 1}.jpg`;;   
+    }
   }
 }
