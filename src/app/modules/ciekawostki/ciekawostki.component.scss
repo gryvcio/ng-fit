@@ -1,3 +1,5 @@
+@import 'src/styles/ng/ng-colors';
+
 .main-timeline {
   position: relative;
 }
@@ -7,7 +9,7 @@
   height: 100%;
   border-radius: 20px;
   margin: 0 auto;
-  background: var(--gray-600);
+  background: $gray-600;
   position: absolute;
   top: 0;
   left: 0;
@@ -24,7 +26,7 @@
   height: 20px;
   border-radius: 50%;
   border: 4px solid #fff;
-  background: var(--green);
+  background: $green;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -39,7 +41,7 @@
   width: 300px; // PG
   height: 300px; // PG
   border-radius: 50%;
-  border: 3px solid var(--green);
+  border: 3px solid $green;
   // padding: 13px;
   padding: 5px; // PG
   text-align: center;
@@ -52,7 +54,7 @@
 .main-timeline .timeline-icon i {
   display: block;
   border-radius: 50%;
-  background: var(--green);
+  background: $green;
   font-size: 64px;
   color: #fff;
   line-height: 100px;
@@ -64,7 +66,7 @@
   content: '';
   width: 100px;
   height: 4px;
-  background: var(--green);
+  background: $green;
   position: absolute;
   top: 50%;
   right: -100px;
@@ -89,7 +91,7 @@
   content: '';
   width: 70%;
   height: 100%;
-  border: 3px solid var(--green);
+  border: 3px solid $green;
   border-top: none;
   border-right: none;
   position: absolute;
@@ -100,7 +102,7 @@
   content: '';
   width: 37px;
   height: 3px;
-  background: var(--green);
+  background: $green;
   position: absolute;
   top: 13px;
   left: 0;
@@ -108,7 +110,7 @@
 .main-timeline .title {
   font-size: 20px;
   font-weight: 600;
-  color: var(--green);
+  color: $green;
   text-transform: uppercase;
   margin: 0 0 5px;
 }
@@ -147,81 +149,81 @@
 }
 
 .main-timeline .timeline:nth-child(2n) .btn-custom {
-    color: var(--teal);
-    border-color: var(--teal);
+    color: $teal;
+    border-color: $teal;
 }
 .main-timeline .timeline:nth-child(2n) .btn-custom:hover {
     color: #fff;
-    background-color: var(--teal);
-    border-color: var(--teal);
+    background-color: $teal;
+    border-color: $teal;
 }
 .main-timeline .timeline:nth-child(2n) .timeline-content:after,
 .main-timeline .timeline:nth-child(2n) .timeline-icon i,
 .main-timeline .timeline:nth-child(2n) .timeline-icon:before,
 .main-timeline .timeline:nth-child(2n):before {
-  background: var(--teal);
+  background: $teal;
 }
 .main-timeline .timeline:nth-child(2n) .timeline-icon {
-  border-color: var(--teal);
+  border-color: $teal;
 }
 .main-timeline .timeline:nth-child(2n) .title {
-  color: var(--teal);
+  color: $teal;
 }
 .main-timeline .timeline:nth-child(2n) .timeline-content:before {
-  border-left-color: var(--teal);
-  border-bottom-color: var(--teal);
+  border-left-color: $teal;
+  border-bottom-color: $teal;
 }
 
 .main-timeline .timeline:nth-child(3n) .btn-custom {
-  color: var(--blue);
-  border-color: var(--blue);
+  color: $blue;
+  border-color: $blue;
 }
 .main-timeline .timeline:nth-child(3n) .btn-custom:hover {
   color: #fff;
-  background-color: var(--blue);
-  border-color: var(--blue);
+  background-color: $blue;
+  border-color: $blue;
 }
 .main-timeline .timeline:nth-child(3n) .timeline-content:after,
 .main-timeline .timeline:nth-child(3n) .timeline-icon i,
 .main-timeline .timeline:nth-child(3n) .timeline-icon:before,
 .main-timeline .timeline:nth-child(3n):before {
-  background: var(--blue);
+  background: $blue;
 }
 .main-timeline .timeline:nth-child(3n) .timeline-icon {
-  border-color: var(--blue);
+  border-color: $blue;
 }
 .main-timeline .timeline:nth-child(3n) .title {
-  color: var(--blue);
+  color: $blue;
 }
 .main-timeline .timeline:nth-child(3n) .timeline-content:before {
-  border-left-color: var(--blue);
-  border-bottom-color: var(--blue);
+  border-left-color: $blue;
+  border-bottom-color: $blue;
 }
 
 .main-timeline .timeline:nth-child(4n) .btn-custom {
-  color: var(--orange);
-  border-color: var(--orange);
+  color: $orange;
+  border-color: $orange;
 }
 .main-timeline .timeline:nth-child(4n) .btn-custom:hover {
   color: #fff;
-  background-color: var(--orange);
-  border-color: var(--orange);
+  background-color: $orange;
+  border-color: $orange;
 }
 .main-timeline .timeline:nth-child(4n) .timeline-content:after,
 .main-timeline .timeline:nth-child(4n) .timeline-icon i,
 .main-timeline .timeline:nth-child(4n) .timeline-icon:before,
 .main-timeline .timeline:nth-child(4n):before {
-  background: var(--orange);
+  background: $orange;
 }
 .main-timeline .timeline:nth-child(4n) .timeline-icon {
-  border-color: var(--orange);
+  border-color: $orange;
 }
 .main-timeline .timeline:nth-child(4n) .title {
-  color: var(--orange);
+  color: $orange;
 }
 .main-timeline .timeline:nth-child(4n) .timeline-content:before {
-  border-left-color: var(--orange);
-  border-bottom-color: var(--orange);
+  border-left-color: $orange;
+  border-bottom-color: $orange;
 }
 @media only screen and (max-width: 1200px) {
   .main-timeline .timeline-icon:before {

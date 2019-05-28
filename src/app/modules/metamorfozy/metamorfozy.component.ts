@@ -22,11 +22,6 @@ export class MetamorfozyComponent {
   loadedImg = 5;
   lastLoadedImg = 0;
   step = 5;
-  // loadOlders = true;
-
-  throttle = 300;
-  scrollDistance = 1;
-  scrollUpDistance = 2;
 
   people: Array<People>;
   peopleInit: Array<People>;
@@ -578,9 +573,6 @@ export class MetamorfozyComponent {
     this.lastLoadedImg = this.loadedImg;
     this.people = this.peopleInit.slice(0, this.loadedImg);
     this.loadedImg += this.step;
-    // if (this.lastLoadedImg >= this.peopleInit.length) {
-    //   this.loadOlders = false;
-    // }
   }
 
   onScrollDown() {
