@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LazyLoadModule } from 'src/app/core/directives/lazy-load.module';
@@ -10,7 +11,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  imports: [ CommonModule, RouterModule.forChild(routes), SharedModule, LazyLoadModule ],
+  imports: [ CommonModule, RouterModule.forChild(routes), HttpClientModule, SharedModule, LazyLoadModule ],
   declarations: [PoradniaComponent]
 })
 export class PoradniaModule { }

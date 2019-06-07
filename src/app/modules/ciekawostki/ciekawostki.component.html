@@ -13,7 +13,7 @@
       [color]="'success'"
     ></app-header-section>
 
-    <div class="row">
+    <div *ngIf="blogList.length > 0; else spinner" class="row">
       <div class="col-md-12">
         <div class="main-timeline">
           <a *ngFor="let item of blogList" class="timeline wow fadeIn fast">
@@ -50,3 +50,7 @@
     </div>
   </div>
 </section>
+
+<ng-template #spinner>
+  <app-spinner-error></app-spinner-error>
+</ng-template>

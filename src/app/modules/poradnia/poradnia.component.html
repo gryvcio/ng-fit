@@ -74,7 +74,7 @@
   </div>
 </section>
 
-<section class="section" id="pointer">
+<section class="section">
   <div class="container">
     <app-header-section
       class="mb-2"
@@ -83,9 +83,9 @@
       [color]="'info'"
     ></app-header-section>
 
-    <div class="row mt-5">
+    <div *ngIf="spotkania.length > 0; else spinner" class="row mt-5">
       <div *ngFor="let item of spotkania" class="col-md-6 col-lg-4 my-3 wow fadeIn">
-        <div class="px-4">
+        <div class="pointer px-4">
           <img
             lazy-load
             [src]="item.imageUrl"
@@ -109,7 +109,7 @@
   </div>
 </section>
 
-<section class="section bg-secondary" id="pointer">
+<section class="section bg-secondary">
   <div class="container">
     <app-header-section
       class="mb-2"
@@ -118,10 +118,10 @@
       [color]="'primary'"
     ></app-header-section>
 
-    <div class="row">
+    <div *ngIf="media.length > 0; else spinner" class="row">
       <div *ngFor="let item of media" class="col-md-6 col-lg-4 my-3 wow fadeIn">
         <div class="card shadow shadow-lg--hover border-0 px-3 py-4">
-          <div class="px-3">
+          <div class="pointer px-3">
             <img
               lazy-load
               [src]="item.imageUrl"
@@ -143,3 +143,7 @@
     </div>
   </div>
 </section>
+
+<ng-template #spinner>
+  <app-spinner-error></app-spinner-error>
+</ng-template>

@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ChangeDetectionStrategy, Component, ChangeDetectorRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgwWowService } from 'ngx-wow';
 import { RandomService } from 'src/app/core/services/random.service';
@@ -30,7 +31,11 @@ export interface Media {
 export class PoradniaComponent {
   imageBg: string;
 
-  spotkania: Array<Spotkania> = [
+  spotkania: Array<Spotkania> = [];
+  media: Array<Media> = [];
+
+  // To remove
+  spotkaniaOld: Array<Spotkania> = [
     {
       cardTitle: 'Zespół Szkół',
       cardSubtitle: 'Gołkowice Dolne i Czarny Potok',
@@ -216,7 +221,7 @@ export class PoradniaComponent {
       `
     }
   ];
-  media: Array<Media> = [
+  mediaOld: Array<Media> = [
     {
       title: 'Wieści Podegrodzkie',
       image: 'podegrodzkie',
@@ -234,12 +239,44 @@ export class PoradniaComponent {
     }
   ];
 
-  constructor(private modalService: NgbModal, private wowService: NgwWowService, private randomBg: RandomService) {
+  constructor(
+    private modalService: NgbModal,
+    private wowService: NgwWowService,
+    private randomBg: RandomService,
+    private http: HttpClient,
+    private cd: ChangeDetectorRef
+  ) {
     this.wowService.init();
     this.imageBg = randomBg.getRandomBg('poradnia');
 
-    this.updateImgUrl(this.spotkania, 'spotkania');
-    this.updateImgUrl(this.media, 'media');
+    this.getSpotkaniaFromJson();
+    this.getMediaFromJson();
+  }
+
+  getSpotkaniaFromJson() {
+    this.http.get('assets/data/spotkania.json').subscribe(
+      (data: Array<Spotkania>) => {
+        this.spotkania = data;
+        this.updateImgUrl(this.spotkania, 'spotkania');
+        this.cd.detectChanges();
+      },
+      err => {
+        console.error(err);
+      }
+    );
+  }
+
+  getMediaFromJson() {
+    this.http.get('assets/data/media.json').subscribe(
+      (data: Array<Media>) => {
+        this.media = data;
+        this.updateImgUrl(this.media, 'media');
+        this.cd.detectChanges();
+      },
+      err => {
+        console.error(err);
+      }
+    );
   }
 
   updateImgUrl(arr: Array<Spotkania | Media>, location: string) {

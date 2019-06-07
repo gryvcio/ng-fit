@@ -1,8 +1,9 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ChangeDetectorRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalBlogComponent } from './modal-people/modal-blog.component';
 import { NgwWowService } from 'ngx-wow';
 import { RandomService } from 'src/app/core/services/random.service';
+import { HttpClient } from '@angular/common/http';
 
 export interface Blog {
   title: string;
@@ -23,8 +24,12 @@ export class CiekawostkiComponent {
   lastLoadedImg = 0;
   step = 10;
   loadOlders = true;
-  blogList: Array<Blog>;
-  blogListInit: Array<Blog> = [
+
+  blogList: Array<Blog> = [];
+  blogListInit: Array<Blog> = [];
+
+  // To remove
+  blogListInitOld: Array<Blog> = [
     {
       title: '8 Marca',
       date: '2019-03-08',
@@ -738,10 +743,29 @@ export class CiekawostkiComponent {
     }
   ];
 
-  constructor(private modalService: NgbModal, private wowService: NgwWowService, private randomBg: RandomService) {
-    this.loadOlder();
+  constructor(
+    private modalService: NgbModal,
+    private wowService: NgwWowService,
+    private randomBg: RandomService,
+    private http: HttpClient,
+    private cd: ChangeDetectorRef
+  ) {
     this.wowService.init();
     this.imageBg = randomBg.getRandomBg('ciekawostki');
+    this.getBlogFromJson();
+  }
+
+  getBlogFromJson() {
+    this.http.get('assets/data/blog.json').subscribe(
+      (data: Array<Blog>) => {
+        this.blogListInit = data;
+        this.loadOlder();
+        this.cd.detectChanges();
+      },
+      err => {
+        console.error(err);
+      }
+    );
   }
 
   updateImgUrl(arr: Array<Blog>) {

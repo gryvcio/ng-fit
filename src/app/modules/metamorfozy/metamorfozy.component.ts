@@ -6,10 +6,10 @@ import { RandomService } from 'src/app/core/services/random.service';
 import { ModalPeopleComponent } from './components/modal-people/modal-people.component';
 
 export interface People {
-  title: string,
-  weight: string,
-  image: string,
-  description: string
+  title: string;
+  weight: string;
+  image: string;
+  description: string;
 }
 @Component({
   selector: 'app-metamorfozy',
@@ -23,9 +23,11 @@ export class MetamorfozyComponent {
   lastLoadedImg = 0;
   step = 5;
 
-  people: Array<People>;
+  people: Array<People> = [];
   peopleInit: Array<People>;
-  people2: Array<People> = [
+  
+  // To remove
+  peopleInitOld: Array<People> = [
     {
       title: 'Pani Martyna',
       weight: '&ndash;17 kg',
@@ -548,7 +550,7 @@ export class MetamorfozyComponent {
     private randomBg: RandomService,
     private cd: ChangeDetectorRef
   ) {
-    this.getData();
+    this.getPeopleFromJson();
     this.wowService.init();
     this.imageBg = randomBg.getRandomBg('metamorfozy');
   }
@@ -558,15 +560,15 @@ export class MetamorfozyComponent {
     modalRef.componentInstance.item = item;
   }
 
-  getData() {
-    this.http.get('assets/data/people.txt', { responseType: 'text' }).subscribe(data => {
-      let json = data.replace(/(\r\n|\n|\r)/gm, '');
-      json = json.replace(/([a-zA-Z0-9]+?):/g, '"$1":');
-      json = json.replace(/'/g, '"');
-      this.peopleInit = JSON.parse(json);
-      this.loadOlder();
-      this.cd.detectChanges();
-    });
+  getPeopleFromJson() {
+    this.http.get('assets/data/people.json').subscribe(
+      (data: Array<People>) => {
+        this.peopleInit = data;
+        this.loadOlder();
+        this.cd.detectChanges();
+      },
+      err => console.error(err)
+    );
   }
 
   loadOlder() {
