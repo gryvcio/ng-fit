@@ -32,9 +32,10 @@
               <p
                 class="description"
                 [innerHTML]="
-                  item.description.length > 250 ? (item.description | slice: 0:250) + '&hellip;' : item.description
+                  item.descShort.length > 250 ? (item.descShort | slice: 0:250) + '&hellip;' : item.descShort
                 "
               ></p>
+              
               <div class="text-center">
                 <button type="button" class="btn btn-outline-success btn-custom my-3" (click)="openModal(item)">
                   Więcej

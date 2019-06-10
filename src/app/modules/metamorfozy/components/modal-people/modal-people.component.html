@@ -24,7 +24,12 @@
     <img [hidden]="!imageLoader" src="assets/svg/loader.svg" />
   </div>
 
-  <div class="text-justify mt-4" [innerHTML]="item.description"></div>
+  <p
+    *ngFor="let line of item.description; let i = index"
+    [ngClass]="{ 'font-weight-bold': i == 0 }"
+    [innerHTML]="line"
+  ></p>
+
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-outline-success" (click)="activeModal.close()">Zamknij</button>

@@ -4,8 +4,13 @@
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
+
 <div class="modal-body">
-  <div class="text-justify" [innerHTML]="item.description"></div>
+  <p
+    *ngFor="let line of item.description; let i = index"
+    [ngClass]="{ 'font-weight-bold': i == 0 }"
+    [innerHTML]="line"
+  ></p>
 
   <img
     *ngFor="let num of numbers; let i = index"
@@ -15,10 +20,12 @@
     [hidden]="imageLoader"
     (load)="this.imageLoader = false"
   />
+
   <div class="d-flex justify-content-center align-items-center">
     <img [hidden]="!imageLoader" src="assets/svg/loader.svg" />
   </div>
 </div>
+
 <div class="modal-footer">
   <button type="button" class="btn btn-outline-success" (click)="activeModal.close()">Zamknij</button>
 </div>
