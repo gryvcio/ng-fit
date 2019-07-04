@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NgwWowModule } from 'ngx-wow';
@@ -11,7 +12,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(routes), SharedModule, NgwWowModule, LazyLoadModule ],
+  imports: [CommonModule, RouterModule.forChild(routes), HttpClientModule, SharedModule, NgwWowModule, LazyLoadModule ],
   declarations: [ CiekawostkiComponent ]
 })
 export class CiekawostkiModule { }

@@ -83,6 +83,7 @@
       </div>
     </div> -->
       <ng-masonry-grid
+        *ngIf="people.length > 0; else spinner"
         [masonryOptions]="{
           transitionDuration: '0.8s',
           gutter: 30,
@@ -135,3 +136,7 @@
     </div>
   </section>
 </div>
+
+<ng-template #spinner>
+  <app-spinner-error></app-spinner-error>
+</ng-template>
