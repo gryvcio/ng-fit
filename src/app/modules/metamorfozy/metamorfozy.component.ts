@@ -11,6 +11,7 @@ export interface People {
   image: string;
   description: string;
 }
+
 @Component({
   selector: 'app-metamorfozy',
   templateUrl: './metamorfozy.component.html',

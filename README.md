@@ -29,3 +29,5 @@ Close quota - `&rdquo;</em>`
 Minus kg - `&ndash;`
 Smaller dash - `&mdash;`
 3 dots - `&hellip;`
+
+People thumb - 260px 
