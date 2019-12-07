@@ -7,7 +7,8 @@ const routes: Routes = [
   { path: 'oferta', loadChildren: () => import('./modules/oferta/oferta.module').then(m => m.OfertaModule) },
   { path: 'metamorfozy', loadChildren: () => import('./modules/metamorfozy/metamorfozy.module').then(m => m.MetamorfozyModule) },
   { path: 'ciekawostki', loadChildren: () => import('./modules/ciekawostki/ciekawostki.module').then(m => m.CiekawostkiModule) },
-  { path: 'kontakt', loadChildren: () => import('./modules/kontakt/kontakt.module').then(m => m.KontaktModule) }
+  { path: 'kontakt', loadChildren: () => import('./modules/kontakt/kontakt.module').then(m => m.KontaktModule) },
+  { path: 'kalkulator', loadChildren: () => import('./modules/kalkulator/kalkulator.module').then(m => m.KalkulatorModule) }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes, { useHash: true })],

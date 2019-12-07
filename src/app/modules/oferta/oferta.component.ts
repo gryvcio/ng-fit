@@ -18,6 +18,7 @@ export class OfertaComponent {
     'Zaparciach',
     'Przewlekłym i ostrym zapalenie trzustki',
     'Cukrzycy typu I i II',
+    'Insulinnooporność',
     'Chorobach wątroby',
     'Kamicy pęcherzyka żółciowego',
     'Niewydolności wątroby',

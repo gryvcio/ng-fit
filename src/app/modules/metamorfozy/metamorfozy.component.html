@@ -1,8 +1,15 @@
-<div infiniteScroll [infiniteScrollDistance]="0.001" [infiniteScrollThrottle]="400" (scrolled)="onScrollDown()">
+<div
+  infiniteScroll
+  [infiniteScrollDistance]="0.001"
+  [infiniteScrollThrottle]="400"
+  (scrolled)="onScrollDown()"
+>
   <app-header-img-bg
     [imageBg]="imageBg"
     [title]="'Metamorfozy'"
-    [subtitle]="'&mdash; Poznaj moich podopiecznych którym udało się osiągnąć sukces!'"
+    [subtitle]="
+      '&mdash; Poznaj moich podopiecznych którym udało się osiągnąć sukces!'
+    "
   ></app-header-img-bg>
 
   <section class="section">
@@ -20,12 +27,19 @@
             <div class="text-center">
               <h5 class="title">
                 <span class="d-block mb-3">Pan Mateusz</span>
-                <p class="badge badge-pill badge-danger custom-badge px-4 py-2 mb-3">&ndash;16 kg</p>
+                <p
+                  class="badge badge-pill badge-danger custom-badge px-4 py-2 mb-3"
+                >
+                  &ndash;16 kg
+                </p>
               </h5>
             </div>
 
             <div class="px-3">
-              <a href="https://www.youtube.com/watch?v=qVwgjCKkWgE" target="_blank">
+              <a
+                href="https://www.youtube.com/watch?v=qVwgjCKkWgE"
+                target="_blank"
+              >
                 <img
                   lazy-load
                   class="img-center rounded img-fluid shadow shadow-lg--hover img-pointer"
@@ -39,7 +53,8 @@
                 class="button btn btn-outline-success"
                 href="https://www.youtube.com/watch?v=qVwgjCKkWgE"
                 target="_blank"
-                >Więcej
+              >
+                Więcej
               </a>
             </div>
           </div>
@@ -57,31 +72,6 @@
         [color]="'info'"
       ></app-header-section>
 
-      <!-- Peoples without grid layout -->
-      <!-- <div class="row">
-      <div *ngFor="let item of people" class="col-md-6 col-lg-4 my-3">
-        <div class="card shadow border-0 px-3 py-4">
-          <div class="text-center">
-            <h5 class="title">
-              <span class="d-block mb-3">{{ item.title }}</span>
-              <p class="badge badge-pill badge-danger custom-badge px-4 py-2 mb-3">{{ item.weight }}</p>
-            </h5>
-          </div>
-
-          <div class="px-3">
-            <img
-              class="img-center rounded img-fluid shadow shadow-lg--hover img-pointer"
-              src="assets/img/people/{{ item.image }}.jpg"
-              (click)="openModal(item)"
-            />
-          </div>
-
-          <div class="mt-4 d-flex justify-content-center">
-            <button type="button" class="btn btn-outline-success" (click)="openModal(item)">Więcej</button>
-          </div>
-        </div>
-      </div>
-    </div> -->
       <ng-masonry-grid
         *ngIf="people.length > 0; else spinner"
         [masonryOptions]="{
@@ -96,17 +86,19 @@
         <ng-masonry-grid-item
           *ngFor="let item of people; let i = index"
           id="{{ 'masonry-item-' + i }}"
-          class="card shadow border-0 grid-item px-3 py-4 wow fadeIn fast"
-          data-wow-delay="0.2s"
+          class="card shadow border-0 grid-item px-3 py-4"
         >
           <div class="text-center">
             <h5 class="title">
               <span class="d-block mb-3">{{ item.title }}</span>
-              <p class="badge badge-pill badge-danger custom-badge px-4 py-2 mb-3" [innerHTML]="item.weight"></p>
+              <p
+                class="badge badge-pill badge-danger custom-badge px-4 py-2 mb-3"
+                [innerHTML]="item.weight"
+              ></p>
             </h5>
           </div>
 
-          <div class="px-3">
+          <div imagesLoaded class="px-3">
             <img
               src="assets/img/people/thumb/{{ item.image }}-thumb.jpg"
               class="img-center rounded img-fluid shadow shadow-lg--hover img-pointer"
@@ -116,7 +108,13 @@
           </div>
 
           <div class="mt-4 d-flex justify-content-center">
-            <button type="button" class="btn btn-outline-success" (click)="openModal(item)">Więcej</button>
+            <button
+              type="button"
+              class="btn btn-outline-success"
+              (click)="openModal(item)"
+            >
+              Więcej
+            </button>
           </div>
         </ng-masonry-grid-item>
       </ng-masonry-grid>
@@ -127,7 +125,9 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-5">
-          <div class="card bg-gradient-warning shadow-lg text-center border-0 m-1 p-5">
+          <div
+            class="card bg-gradient-warning shadow-lg text-center border-0 m-1 p-5"
+          >
             <p class="display-4 text-white">Strefa Fit!</p>
             <p class="lead text-white mt-3">To nie są wszyscy!</p>
           </div>

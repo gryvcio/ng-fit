@@ -1,0 +1,24 @@
+@import 'src/styles/ng/ng-colors';
+
+.section {
+  min-height: calc(100vh - 6.5rem);
+}
+
+::ng-deep .nav-fill .nav-link.active {
+  margin-top: -1px;
+  border-top: 2px solid $green;
+}
+
+::ng-deep .nav-pills .nav-link {
+  color: $green;
+}
+
+::ng-deep .nav-pills .nav-link:hover {
+  color: $green;
+}
+
+::ng-deep .nav-pills .nav-link.active, 
+::ng-deep .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: $green;
+}

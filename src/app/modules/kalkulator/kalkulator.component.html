@@ -1,0 +1,94 @@
+<section class="section mt-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+        <ngb-tabset [justify]="'center'" class="custom-tab-content flex-column flex-md-row success" type="pills">
+          <!-- BMI -->
+          <ngb-tab>
+            <ng-template ngbTabTitle> BMI </ng-template>
+            <ng-template ngbTabContent>
+              <h3 class="mt-5">
+                Kalkulator BMI (z ang. Body Mass Index - wskaźnik masy ciała)
+              </h3>
+              <p class="description">
+                Kalkulator BMI jest prostym kalkulatorem dietetycznym działającym na podstawie matematycznego wzoru
+                opracowanego przez belgijskiego matematyka Lamberta Adolphe’a Jacquesa Queteleta w 1830 roku.
+              </p>
+              <p class="description">
+                Wskażnik BMI może być używany tylko względem osoby dorosłej. Obliczanie prawidłowej masy ciała dziecka
+                do lat 14 powinno się używać tabel centylowych. Kalkulator BMI nie uwzględnia masy mięśniowej pacjenta.
+                Przez to osoba zdrowa, uprawiająca kulturystykę, sport lub ciężką pracę fizyczną oraz przestrzegająca
+                diety, może według formuły BMI błędnie znajdować się w grupie podwyższonego ryzyka chorób związanych ze
+                złym odżywianiem.
+              </p>
+
+              <form #tdForm="ngForm">
+                <div class="row justify-content-center">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="masaCiala">Masa Ciała</label>
+                      <input
+                        (keyup)="onCountBMI()"
+                        id="masaCiala"
+                        type="text"
+                        placeholder="Masa Ciała"
+                        class="form-control form-control-alternative"
+                        name="bodyWeight"
+                        [(ngModel)]="bodyWeight"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="wzrost">Wzrost</label>
+                      <input
+                        (keyup)="onCountBMI()"
+                        id="wzrost"
+                        type="text"
+                        placeholder="Wzrost"
+                        class="form-control form-control-alternative"
+                        name="bodyHeight"
+                        [(ngModel)]="bodyHeight"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-md-6" *ngIf="bmi > 0">
+                    <p class="font-weight-bold">BMI = {{ bmi }}</p>
+                    <p *ngIf="bmi < 18.50">Niedowaga</p>
+                    <p *ngIf="bmi > 18.50 && bmi < 24.99">Waga prawidłowa</p>
+                    <p *ngIf="bmi > 25 && bmi < 29.99">Nadwaga</p>
+                    <p *ngIf="bmi > 30">Otyłość</p>
+                  </div>
+                </div>
+              </form>
+            </ng-template>
+          </ngb-tab>
+
+          <!-- WHR -->
+          <ngb-tab>
+            <ng-template ngbTabTitle> WHR </ng-template>
+            <ng-template ngbTabContent>
+              <h3 class="mt-5">
+                Kalkulator WHR (z ang. Waist-Hip Ratio - Stosunek Talia-Biodra )
+              </h3>
+              <p class="description">
+                Kalkulator WHR jest kalkulatorem pozwalającym na dokładne określenie typu sylwetki oraz ew. typu nadwagi
+                (brzuszna bądź udowa). Dzięki czemu można bardziej dokładnie opracować dietę do indywidualnych potrzeb.
+              </p>
+              <p class="description">
+                By obliczyć wartość WHR, należy najpierw zmierzyć obwód talii oraz bioder przy pomocy taśmy do pomiarów
+                antropometrycznych, bądź metra krawieckiego. Należy zrobić to jak najdokładniej, by obliczenia były
+                możliwie najbliższe prawdy. Stwierdzenie typu sylwetki oraz typu nadwagi jest kluczowe dla przygotowania
+                diety.
+              </p>
+            </ng-template>
+          </ngb-tab>
+        </ngb-tabset>
+      </div>
+    </div>
+  </div>
+</section>
