@@ -33,8 +33,7 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "./node_modules/wowjs/dist/wow.min.js",
-              "./node_modules/magic-grid/dist/magic-grid.min.js"
+              "./node_modules/wowjs/dist/wow.min.js"
             ],
             "es5BrowserSupport": true
           },

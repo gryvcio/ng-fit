@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
 import { NgwWowService } from 'ngx-wow';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-home',
@@ -9,16 +10,16 @@ import { NgwWowService } from 'ngx-wow';
 })
 export class HomeComponent {
   countToOptions = {
-    duration: 4,
-    separator: ' ',
-    suffix: '+',
+    duration: 4,
+    separator: ' ',
+    suffix: '+',
   };
   coffees: Number;
   workHours: Number;
   burnKilos: Number;
   trainings: Number;
-  
-  constructor(private wowService: NgwWowService) {
+
+  constructor(private wowService: NgwWowService, private modalService: NgbModal) {
     this.wowService.init();
     this.getData();
   }
@@ -36,5 +37,11 @@ export class HomeComponent {
     this.workHours = (diffDays - diffYears * workDays) * 10;
     this.burnKilos = (diffDays - diffYears * workDays) * 5.35;
     this.trainings = (diffDays - diffYears * workDays) * 2.3;
+  }
+
+
+  open(content: ElementRef, type: string, modalDimension: string) {
+    this.modalService.open(content, { windowClass: 'modal-danger', centered: true }).result.then((result) => {
+    });
   }
 }
