@@ -1,6 +1,6 @@
 <div class="modal-header">
   <div>
-    <h4 class="modal-title">{{ item.title }}</h4>
+    <h4 class="modal-title" [innerHTML]="item.title"></h4>
     <p class="text-muted mt-3 mb-0">{{ item.date }}</p>
   </div>
   <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">

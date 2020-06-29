@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { NgwWowService } from 'ngx-wow';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
@@ -8,7 +8,9 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./home.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  @ViewChild('classic2', { static: false }) classic2: ElementRef;
+
   countToOptions = {
     duration: 4,
     separator: ' ',
@@ -22,6 +24,12 @@ export class HomeComponent {
   constructor(private wowService: NgwWowService, private modalService: NgbModal) {
     this.wowService.init();
     this.getData();
+  }
+
+  ngOnInit(): void {
+    // setTimeout(() => {
+    //   this.open(this.classic2, 'Notification', '');
+    // }, 2000);
   }
 
   getData() {
@@ -40,7 +48,7 @@ export class HomeComponent {
   }
 
 
-  open(content: ElementRef, type: string, modalDimension: string) {
+  open(content, type: string, modalDimension: string) {
     this.modalService.open(content, { windowClass: 'modal-danger', centered: true }).result.then((result) => {
     });
   }

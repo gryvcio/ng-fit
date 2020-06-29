@@ -1,10 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, AfterViewInit, AfterViewChecked } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgwWowService } from 'ngx-wow';
 import { RandomService } from 'src/app/core/services/random.service';
 import { ModalPeopleComponent } from './components/modal-people/modal-people.component';
-declare var MagicGrid: any;
 
 export interface People {
   title: string;
